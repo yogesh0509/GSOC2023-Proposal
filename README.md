@@ -40,6 +40,8 @@ A major problem with online voting is that a single person can have multiple acc
 
     * Verifier: A Verifier verifies the proof presented by a Holder. It requests the Holder to send a proof based on the VCs they hold in their wallet. While verifying a proof, the Verifier performs a set of checks, for example that the VC was signed by the expected Issuer and that the VC matches the criteria requested by the Verifier. In our case it would check whether the id of the user KYC credentials, eg: "aadhar card", is present in the holder wallet.
 
+    ![](https://0xpolygonid.github.io/tutorials/imgs/triangle-of-trust-simple.png)
+
 * [More about polyognID and its architecture](https://wiki.polygon.technology/docs/polygonid/overview/)
 * [More about zero-knowledge proofs](https://ethereum.org/en/zero-knowledge-proofs/)
 
@@ -86,6 +88,8 @@ A major problem with online voting is that a single person can have multiple acc
    * Now the user holds the claim that he/she is a valid person and can vote in the election.
    * [Further docs required for being an issuer can be found here.](https://0xpolygonid.github.io/tutorials/issuer/issuer-overview/)
 
+    ![](https://0xpolygonid.github.io/tutorials/imgs/triangle-of-trust-simple.png)
+
 4. 
     * The last step is to generate a QR code that users can scan from their polygonID wallet.
     * Demo json file for QR code.
@@ -127,6 +131,15 @@ A major problem with online voting is that a single person can have multiple acc
     * This json file will link to the vote function in ```vote.sol```.
     * [Further docs](https://0xpolygonid.github.io/tutorials/verifier/on-chain-verification/overview/)
 
+        ![](https://0xpolygonid.github.io/tutorials/imgs/on-chain-verification-flow.png)
+
+
+## 2. Extra features
+
+* Deploy on layer 2 networks - The smart contracts can be deployed on layer 2 networks like Arbitrum, polygon which offer lower gas fees and are faster than ethereum.
+
+* UI/UX improvements - The overall UI of the website can be improved so that it is easy for users to navigate the website and explore all the features that we offer.
+
 
 ### 0. Before Community Bonding
 
@@ -145,6 +158,60 @@ A major problem with online voting is that a single person can have multiple acc
 * Discuss the current approach with the mentor and start noting down their advantages and disadvantages of them.
 * Come up with the possible approaches and finalize what all features are required.
 * Start laying out a general outline of the possible cases.
+
+### 2. Phase 1
+#### 2.1 Week 4:
+* Study the polygonID docs thoroughly.
+* Make changes in the BrightID.sol contract.
+* Check the requirements for running a local issuer node.
+* Set up docker for running a issuer node.
+* Get familiar with GO language for easy implementaion.
+* Finally, run an issuer node.
+#### 2.2 Week 5:
+* Discuss the necessary fields required for creating a schema.
+* Connect your smart contract with the isser node so that schema can be generated.
+* Work with the necessary api to create a schema.
+* Finally, generate your schema.
+#### 2.3 Week 6:
+* Write contracts for saving metadata of voter documents.
+* Create a web3.storage account.
+* Upload the voter documents to ipfs.
+#### 2.4 Week 7:
+* Write ElectionSupervisor contract.
+* Allow people to become election supervisors.
+* Election Supervisor can start voting for voter credentials.
+* Reward the election supervisor accordingly.
+#### 2.5 Week 8:    
+* Issue claims to voters who have been verified.
+* Update the UI with the QR codes of the claims that voters can scan with their polygonID app.
+#### 2.6 Week 9:
+* Set up QR codes in the front-end which users can scan to directly vote in their election.
+* Link those QR codes with ```vote()``` function using ZKPVerifier.
+* Deploy contracts related to polygonID.
+
+### 3. Phase 2
+#### 3.1 Week 10:
+* Add other chains to the frontend.
+* Integrate frontend with the smart contracts.
+#### 3.2 Week 11:
+* Testing and compiling phase.
+* Handle any unexpected errors.
+* Deploying on the test net.
+* Complete any left-over work.
+#### 3.3 Week 12:
+* Improving css and other design changes.
+* Improving the UX of the website.
+#### 3.4 Week 13:
+* Testing each function and asserting it to check errors.
+* Checking the application with different test cases.
+* Finalize and complete the documentation.
+* Refactor Code.
+#### 3.5 Week 14:    
+* Deploying on layer 2 network.
+* Checking the entire application thoroughly
+* Work on leftover stuff.
+#### 3.6 Week 15:
+* Buffer week for unexpected delays, final submissions for GSoC 2022.
 
 # III. Skills
 ### Programming Skills
@@ -171,6 +238,7 @@ To become a member of the society, interested individuals need to verify their i
 
 
 <br>
+
 # V. Other Open-Source development experience
 * **HSOC22** - It is a community polling app
 
@@ -201,9 +269,3 @@ I'm fairly confident to work on the project and make it a success.
 ---
 
 ### Thank You
-
-
-
-
-
-
